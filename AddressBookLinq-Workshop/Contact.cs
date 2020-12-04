@@ -15,31 +15,7 @@ namespace AddressBookLinq_Workshop
         private int zip;
         private string phoneNumber;
         private string email;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Contact"/> class.
-        /// </summary>
-        /// <param name="firstName">The first name.</param>
-        /// <param name="lastName">The last name.</param>
-        /// <param name="address">The address.</param>
-        /// <param name="city">The city.</param>
-        /// <param name="state">The state.</param>
-        /// <param name="zip">The zip.</param>
-        /// <param name="phoneNumber">The phone number.</param>
-        /// <param name="email">The email.</param>
-        public Contact(string firstName, string lastName, string address, string city, string state, int zip, string phoneNumber, string email)
-        {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.address = address;
-            this.city = city;
-            this.state = state;
-            this.zip = zip;
-            this.phoneNumber = phoneNumber;
-            this.email = email;
-        }
-
-
+       
         /// <summary>
         /// Gets or sets the first name.
         /// </summary>
@@ -103,6 +79,11 @@ namespace AddressBookLinq_Workshop
         /// The email.
         /// </value>
         public string Email { get => email; set => email = value; }
+
+        public override string ToString()
+        {
+            return FirstName + "\t" + LastName + "\t" + Address + "\t" + City + "\t" + State + "\t" + Zip + "\t" + PhoneNumber + "\t" + Email;
+        }
     }
 }
 
