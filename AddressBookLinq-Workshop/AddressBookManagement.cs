@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Linq;
 
 namespace AddressBookLinq_Workshop
 {
@@ -134,7 +135,7 @@ namespace AddressBookLinq_Workshop
                         Console.WriteLine("Enter new First Name");
                         string firstName = Console.ReadLine();
                         validator.ValidateFirstName(firstName);
-                        contact.SetField("FirstName",firstName);
+                        contact.SetField("FirstName", firstName);
                         break;
                     case 2:
                         Console.WriteLine("Enter new Last Name");
@@ -204,6 +205,24 @@ namespace AddressBookLinq_Workshop
                 Console.WriteLine();
                 Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
             }
+        }
+
+        /// <summary>
+        /// Deletes the contact.
+        /// </summary>
+        /// <param name="table">The table.</param>
+        public void DeleteContact(DataTable table)
+        {
+            Console.WriteLine("Enter first name which you want to delete");
+            string firstName = Console.ReadLine();
+
+            for (int i = table.Rows.Count - 1; i >= 0; i--)
+            {
+                DataRow dr = table.Rows[i];
+                if (dr["FirstName"].ToString() == firstName)
+                    dr.Delete();
+            }
+            table.AcceptChanges();
         }
     }
 }

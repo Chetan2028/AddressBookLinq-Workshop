@@ -17,7 +17,8 @@ namespace AddressBookLinq_Workshop
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Press 1 to AddContact \nPress 2 to View Contact \nPress 3 to Edit Contact \nPress 4 to Exit");
+                Console.WriteLine("Press 1 to AddContact \nPress 2 to View Contact \nPress 3 to Edit Contact \nPress 4 to Delete" +
+                    "\nPress 5 to Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -31,6 +32,9 @@ namespace AddressBookLinq_Workshop
                         addressBookManagement.EditContact(table);
                         break;
                     case 4:
+                        addressBookManagement.DeleteContact(table);
+                        break;
+                    case 5:
                         flag = false;
                         break;
                     default:
