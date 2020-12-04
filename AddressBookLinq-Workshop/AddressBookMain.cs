@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace AddressBookLinq_Workshop
 {
@@ -6,7 +7,10 @@ namespace AddressBookLinq_Workshop
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to Address Book Linq");
+
+            //create Data table
+            DataTable table = new DataTable();
         }
     }
 }
