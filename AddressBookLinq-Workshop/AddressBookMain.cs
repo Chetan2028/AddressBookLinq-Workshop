@@ -14,6 +14,7 @@ namespace AddressBookLinq_Workshop
             DataTable table = new DataTable();
 
             addressBookManagement.AddDataToTable(table);
+            addressBookManagement.ViewDataTable(table);
         }
     }
 }
