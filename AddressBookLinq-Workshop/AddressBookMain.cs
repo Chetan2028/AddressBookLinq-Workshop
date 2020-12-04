@@ -8,9 +8,12 @@ namespace AddressBookLinq_Workshop
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Address Book Linq");
+            AddressBookManagement addressBookManagement = new AddressBookManagement();
 
             //create Data table
             DataTable table = new DataTable();
+
+            addressBookManagement.AddDataToTable(table);
         }
     }
 }
